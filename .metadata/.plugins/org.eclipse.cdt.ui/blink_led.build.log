@@ -1,0 +1,18 @@
+16:18:31 **** Incremental Build of configuration Debug for project blink_led ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F411xE -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:52:29: error: expected ';', ',' or ')' before numeric constant
+   52 | void toggleLed(uint16_t PIN 5){
+      |                             ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:99:11: warning: implicit declaration of function 'toggleLed' [-Wimplicit-function-declaration]
+   99 |           toggleLed(GPIO_PIN_5);
+      |           ^~~~~~~~~
+../Core/Src/main.c:100:11: warning: implicit declaration of function 'delay' [-Wimplicit-function-declaration]
+  100 |           delay(1000);
+      |           ^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+16:18:32 Build Failed. 2 errors, 2 warnings. (took 536ms)
+
